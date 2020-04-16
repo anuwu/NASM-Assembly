@@ -9,12 +9,10 @@ subProc :
         mov     ax, WORD [rbp+16]
         mov     bx, WORD [rbp+18]
 
-        movsx   rax, ax
-        movsx   rbx, bx
-        sub     rax, rbx
+        sub     ax, bx
 
         mov     rdi, Datformat                   ; printf
-        mov     rsi, rax
+        movsx   rsi, ax
         xor     rax, rax
         call    printf
 
