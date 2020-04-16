@@ -24,12 +24,10 @@ main:
         xor     rax, rax
         call    printf
         
-        push    rbx
         mov     bx, 56
         mov     [rbp-2], bx
         mov     ax, [rbp-2]
         movsx   rax, ax
-        pop     rbx
 
         mov     rdi, Datformat
         mov     rsi, rax
