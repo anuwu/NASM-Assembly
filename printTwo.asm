@@ -1,7 +1,8 @@
-        global  main
-        extern  printf
+global  main
+extern  printf
 
-        section .text
+section .text
+
 main:
         push    rbp
         mov     rbp, rsp
