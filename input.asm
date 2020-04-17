@@ -11,6 +11,8 @@ section .text
 	 extern printf 
  
 main: 
+         push rbp
+         push rbp
 	 mov rbp, rsp 
 		
 	 sub rsp, 6	
@@ -52,5 +54,7 @@ main:
 	 call printf
 	 xor rax, rax
 	 
-	 add rsp, 6
+	 mov rsp, rbp
+     pop rbp
+     pop rbp
 	 ret
