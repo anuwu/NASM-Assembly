@@ -3,7 +3,6 @@
 
         section .text
 main:
-        push    rbp
         mov     rbp, rsp
         mov     rdi, SPformat                   ; printf
         mov     rsi, rsp
@@ -34,8 +33,6 @@ main:
         xor     rax, rax
         call    printf
 
-        pop     rbp
-        xor     rax, rax
         ret
 SPformat:
         db      "The current SP = %ld", 10, 0
