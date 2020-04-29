@@ -39,12 +39,21 @@ main:
 	add rax, 8
 	sub rsp, rax				; currently at rsp mod 16 = 0
 
+	mov rdi, inputInt
 	mov rsi, rsp
 	sub rsi, 4
 
+	push rdx
+	push rcx
+	push rbx
 	push rax
+	push rsi
 	call scanf
+	pop rsi
 	pop rax
+	pop rbx
+	pop rcx
+	pop rdx
 
 	mov bx, [rsp-4]
 	mov [rbp-4], bx
@@ -53,12 +62,10 @@ main:
 
 	; ---- Scanf end ------ ;
 
-	push rax				; checking if subtraction amount is valid after scanf ---> Not valid
 	mov rdi, outputInt
-	mov rsi, rax
+	movsx rsi, bx
 	xor rax, rax
 	call printf
-	pop rax
 
 	mov rsp, rbp
 	pop rbp
