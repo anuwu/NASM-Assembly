@@ -9,6 +9,7 @@ section .text
 	extern printf 
  
 main: 
+	push rbp 
 	mov rbp, rsp
 
 	mov WORD [rbp-4], 4
@@ -60,4 +61,5 @@ main:
 	pop rax
 
 	mov rsp, rbp
+	pop rbp
 	ret
